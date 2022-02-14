@@ -1,7 +1,7 @@
 #Download image from artifactory
 ARG REGISTRY
-FROM openjdk:11-jdk
-#FROM $REGISTRY/openjdk:11-jdk
+FROM releases-docker.jfrog.io/jfrog/pipelines-u18java:11
+
 
 WORKDIR /app
 

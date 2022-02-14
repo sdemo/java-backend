@@ -138,6 +138,14 @@
 
 	<repositories>
 		<repository>
+			<id>virtual</id>
+			<name>local virtual</name>
+			<url>https://demo.jfrog-pipelines.com/artifactory/libs-release</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>

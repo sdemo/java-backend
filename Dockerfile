@@ -1,17 +1,10 @@
 #Download image from artifactory
-ARG REGISTRY
 FROM releases-docker.jfrog.io/jfrog/pipelines-u18java:11
-
 
 WORKDIR /app
 
-#Define ARG Again -ARG variables declared before the first FROM need to be declered again
-ARG REGISTRY
-MAINTAINER Elad Hirsch
-
-# Download artifacts from Artifactory
-RUN curl $REGISTRY/libs-release-local/com/jfrog/backend/1.0.0/backend-1.0.0.jar --output server.jar
-RUN curl $REGISTRY/pip-npm-dev-local/frontend/-/frontend-3.0.0.tgz --output client.tgz
+ADD client.tgz .
+ADD server.jar .
 
 #Extract vue app
 RUN tar -xzf client.tgz && rm client.tgz

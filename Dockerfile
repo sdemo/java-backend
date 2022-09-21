@@ -6,11 +6,6 @@ WORKDIR /app
 ADD client.tgz .
 ADD server.jar ./server.jar
 
-RUN apt-get install tree && pwd && ls -latr && tree
-
-#Extract vue app
-#RUN tar -xzf client.tgz && rm client.tgz
-
 # Set JAVA OPTS + Static file location
 ENV STATIC_FILE_LOCATION="/app/package/target/dist/"
 # ENV GO_SERVICE="127.0.0.1"

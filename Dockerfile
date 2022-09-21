@@ -3,13 +3,10 @@ FROM releases-docker.jfrog.io/jfrog/pipelines-u18java:11
 
 WORKDIR /app
 
-ADD client.tgz .
+ADD package .
 ADD server.jar .
 
 RUN pwd && ls -latr
-
-#Extract vue app
-RUN tar -xzf client.tgz && rm client.tgz
 
 # Set JAVA OPTS + Static file location
 ENV STATIC_FILE_LOCATION="/app/package/target/dist/"

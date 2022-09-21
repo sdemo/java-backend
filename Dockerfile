@@ -6,6 +6,8 @@ WORKDIR /app
 ADD client.tgz .
 ADD server.jar .
 
+RUN pwd && ls -latr
+
 #Extract vue app
 RUN tar -xzf client.tgz && rm client.tgz
 
